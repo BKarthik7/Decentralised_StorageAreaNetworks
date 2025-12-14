@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: san_postgres
+    environment:
+      POSTGRES_USER: sa_user
+      POSTGRES_PASSWORD: sa_password
+      POSTGRES_DB: storage_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - san_network
+
+  redis:
+    image: redis:7
+    container_name: san_redis
+    ports:
+      - "6379:6379"
+    networks:
+      - san_network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: san_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    networks:
+      - san_network
+
+  ipfs:
+    image: ipfs/go-ipfs:latest
+    container_name: san_ipfs
+    ports:
+      - "4001:4001"
+      - "5001:5001"
+      - "8080:8080"
+    volumes:
+      - ipfs_data:/data/ipfs
+    networks:
+      - san_network
+
+  ganache:
+    image: trufflesuite/ganache:latest
+    container_name: san_ganache
+    ports:
+      - "8545:8545"
+      - "7545:8545"
+    networks:
+      - san_network
+
+
+
+volumes:
+  postgres_data:
+  ipfs_data:
+
+networks:
+  san_network:
+    driver: bridge

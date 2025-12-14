@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: '**/package-lock.json'
+
+    # Backend
+    - name: Install Backend Dependencies
+      run: |
+        cd backend
+        npm install
+
+    - name: Run Backend Tests
+      run: |
+        cd backend
+        npm test
+
+    # Frontend
+    - name: Install Frontend Dependencies
+      run: |
+        cd frontend
+        npm install
+
+    - name: Build Frontend
+      run: |
+        cd frontend
+        npm run build
+
+    # Smart Contracts (Placeholder if not present)
+    - name: Compile Contracts
+      run: |
+        if [ -f "hardhat.config.js" ]; then
+          npm install --save-dev hardhat
+          npx hardhat compile
+        else
+          echo "No hardhat config found, skipping contract compilation"
+        fi
+
+  deploy-testnet:
+    needs: build-and-test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy to Testnet
+        run: echo "Deploying to testnet..."
+        # Add actual deployment steps here using secrets
+        # env:
+        #   PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+        #   INFURA_KEY: ${{ secrets.INFURA_KEY }}
+        # run: npx hardhat run scripts/deploy.js --network sepolia
