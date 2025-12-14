@@ -1,7 +1,7 @@
 {
-  "name": "san-backend",
+  "name": "decentralised-storage-area-networks-backend",
   "version": "1.0.0",
-  "description": "Backend for Decentralized Cloud Storage",
+  "description": "Backend for Decentralised Storage Area Networks",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
