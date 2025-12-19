@@ -1,6 +1,11 @@
 const axios = require('axios');
-const pinataService = require('../src/services/pinataService');
 const fs = require('fs');
+
+// Mock environment variables BEFORE requiring the service
+process.env.PINATA_API_KEY = 'test_key';
+process.env.PINATA_API_SECRET = 'test_secret';
+
+const pinataService = require('../src/services/pinataService');
 
 jest.mock('axios');
 

@@ -107,7 +107,7 @@ npm run dev
 3.  **My Files**: Click a file to view details.
 4.  **Decrypt**: Click "Reconstruct Key & Decrypt" to download your file.
 
-### Admin Dashboard (`http://localhost:5173/admin/dashboard`)
+### Admin Dashboard (`http://localhost:5173/admin`)
 1.  **Node Topology**: Visualize the 5-node cluster.
     *   Click "Kill Node" to simulate failure (watch shards migrate in logs).
     *   Click "Recover Node" to bring it back (watch load rebalancing).
