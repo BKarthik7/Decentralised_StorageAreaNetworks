@@ -90,7 +90,37 @@ node backend/scripts/deployContract.js
 ```
 *This will update `backend/.env` with the new Contract Address.*
 
-### 4. Start Services
+### 4. Configure Backend
+Create a `.env` file in the `backend/` directory:
+
+```env
+PORT=4000
+
+# Postgres
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_DB=storage_db
+POSTGRES_USER=sa_user
+POSTGRES_PASSWORD=sa_password
+DATABASE_URL=postgresql://sa_user:sa_password@localhost:5432/storage_db
+
+# JWT
+JWT_SECRET=dev_secret_key_change_in_prod
+JWT_EXPIRY=7d
+BCRYPT_SALT_ROUNDS=12
+
+# Pinata (Placeholders - User needs to fill these or use local IPFS fallback if implemented)
+PINATA_API_KEY=
+PINATA_API_SECRET=
+PINATA_JWT=
+
+# Blockchain (Placeholders)
+ETH_PROVIDER_URL=http://127.0.0.1:7545
+CONTRACT_ADDRESS=0x9DE9028f3165d5ac05D8d0Bb5C81E5fe025b4Dd4
+CONTRACT_PRIVATE_KEY=
+```
+
+### 5. Start Services
 
 **Backend API (Port 4000)**
 ```bash
