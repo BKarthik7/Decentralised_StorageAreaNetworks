@@ -47,14 +47,11 @@ jobs:
         npm run build
 
     # Smart Contracts (Placeholder if not present)
+    # Smart Contracts
     - name: Compile Contracts
       run: |
-        if [ -f "hardhat.config.js" ]; then
-          npm install --save-dev hardhat
-          npx hardhat compile
-        else
-          echo "No hardhat config found, skipping contract compilation"
-        fi
+        cd backend
+        node scripts/compileContract.js
 
   deploy-testnet:
     needs: build-and-test
