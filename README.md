@@ -52,6 +52,15 @@ Instead of storing your file and its key on a single server (like traditional cl
 
 ---
 
+## 📸 Screenshots
+
+|   |   |   |
+|:---:|:---:|:---:|
+| <img src="Images/Screenshot%20from%202025-12-15%2001-52-48.png" width="300" /> | <img src="Images/Screenshot%20from%202025-12-15%2001-57-30.png" width="300" /> | <img src="Images/Screenshot%20from%202025-12-15%2001-57-45.png" width="300" /> |
+| <img src="Images/Screenshot%20from%202025-12-15%2001-58-26.png" width="300" /> | <img src="Images/Screenshot%20from%202025-12-15%2001-58-41.png" width="300" /> | <img src="Images/Screenshot%20from%202025-12-15%2003-13-42.png" width="300" /> |
+
+---
+
 ## 🚀 Quick Start Guide
 
 ### Prerequisites
