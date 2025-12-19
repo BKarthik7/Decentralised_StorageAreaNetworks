@@ -1,13 +1,13 @@
 # Decentralised_StorageAreaNetworks (San) 🛡️🌐
 
-**San** is a proof-of-concept **Decentralized Cloud Storage System** that prioritizes security, privacy, and transparency. It leverages **Threshold Cryptography**, **IPFS**, and **Blockchain** technology to ensure that files are encrypted, their keys are distributed, and their metadata is immutable.
+**This project** is a proof-of-concept **Decentralized Cloud Storage System** that prioritizes security, privacy, and transparency. It leverages **Threshold Cryptography**, **IPFS**, and **Blockchain** technology to ensure that files are encrypted, their keys are distributed, and their metadata is immutable.
 
 ---
 
 ## 💡 The Core Idea
 
-The central philosophy of San is **"Trust No Single Entity"**. 
-Instead of storing your file and its key on a single server (like traditional cloud storage), San implements a zero-trust architecture:
+The central philosophy of this project is **"Trust No Single Entity"**. 
+Instead of storing your file and its key on a single server (like traditional cloud storage), this project implements a zero-trust architecture:
 
 1.  **Client-Side Encryption**: Files are encrypted *before* they leave your browser. The server never sees the unencrypted file.
 2.  **Shamir's Secret Sharing**: The encryption key is **never stored intact**. It is mathematically split into 5 "shards".
