@@ -1,4 +1,4 @@
-# Decentralised_StorageAreaNetworks (San) 🛡️🌐
+# Decentralised_StorageAreaNetworks (SAN)
 
 **This project** is a proof-of-concept **Decentralized Cloud Storage System** that prioritizes security, privacy, and transparency. It leverages **Threshold Cryptography**, **IPFS**, and **Blockchain** technology to ensure that files are encrypted, their keys are distributed, and their metadata is immutable.
 
